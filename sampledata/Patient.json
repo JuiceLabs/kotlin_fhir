@@ -1,0 +1,96 @@
+{
+  "resourceType": "Patient",
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "MR",
+            "display": "MR"
+          }
+        ],
+        "text": "MR"
+      },
+      "system": "urn:oid:2.16.840.1.113883.4.1",
+      "value": "200000007"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "usual",
+      "family": [
+        "Doe"
+      ],
+      "given": [
+        "John"
+      ]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "2000-09-01",
+  "deceasedBoolean": false,
+  "address": [
+    {
+      "use": "home"
+    }
+  ],
+  "multipleBirthBoolean": false,
+  "contact": [
+    {
+      "relationship": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/patient-contact-relationship",
+              "code": "friend",
+              "display": "Friend"
+            }
+          ],
+          "text": "Friend"
+        }
+      ],
+      "name": {
+        "use": "usual",
+        "text": "Frouwina Jong",
+        "family": [
+          "Jong"
+        ],
+        "given": [
+          "Frouwina"
+        ]
+      },
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "289-990-5494",
+          "use": "home"
+        }
+      ],
+      "address": {
+        "line": [
+          "1173 Oak Drive"
+        ],
+        "city": "Chicago",
+        "state": "DE",
+        "postalCode": "30732",
+        "country": "USA"
+      },
+      "gender": "female"
+    }
+  ],
+  "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "code": "en",
+            "display": "English"
+          }
+        ],
+        "text": "English"
+      },
+      "preferred": true
+    }
+  ]
+}
