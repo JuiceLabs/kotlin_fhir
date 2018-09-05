@@ -1,12 +1,12 @@
-package com.juicelabs.fhir.model
+package com.juicelabs.fhir.model.datatypes
 
+import com.juicelabs.fhir.model.Base
 import java.time.LocalDateTime
-import java.util.*
 import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
 
+/**
+ *  https://www.hl7.org/fhir/datatypes.html#Period
+ */
 @Entity
 data class Period(
         val start: LocalDateTime,

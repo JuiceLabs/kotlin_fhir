@@ -1,5 +1,6 @@
-package com.juicelabs.fhir.model
+package com.juicelabs.fhir.model.datatypes
 
+import com.juicelabs.fhir.model.Base
 import java.net.URI
 import javax.persistence.*
 
@@ -11,7 +12,7 @@ import javax.persistence.*
 data class Identifier(
         val use: String? = null,
 
-        @OneToOne(fetch = FetchType.EAGER)
+        @OneToOne(cascade = arrayOf(CascadeType.ALL),fetch = FetchType.EAGER)
         @JoinColumn(name = "codeable_concept_id")
         val type: CodeableConcept? = null,
 
@@ -19,12 +20,14 @@ data class Identifier(
 
         val value: String? = null,
 
-        @OneToOne(fetch = FetchType.EAGER)
+        @OneToOne(cascade = arrayOf(CascadeType.ALL),fetch = FetchType.EAGER)
         @JoinColumn(name = "period_id")
         val period: Period? = null
 
         // todo val assigner
 ): Base()
+
+
 
 
 //class Token(@field:JsonProperty("access_token")

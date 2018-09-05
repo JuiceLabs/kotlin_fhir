@@ -1,5 +1,6 @@
-package com.juicelabs.fhir.model
+package com.juicelabs.fhir.model.datatypes
 
+import com.juicelabs.fhir.model.Base
 import javax.persistence.*
 
 /**
@@ -24,7 +25,7 @@ data class HumanName(
         @ElementCollection
         var suffix: List<String>?,
 
-        @OneToOne(fetch = FetchType.EAGER)
+        @OneToOne(cascade = arrayOf(CascadeType.ALL), fetch = FetchType.EAGER)
         @JoinColumn(name = "period_id")
         val period: Period?
 ) : Base()

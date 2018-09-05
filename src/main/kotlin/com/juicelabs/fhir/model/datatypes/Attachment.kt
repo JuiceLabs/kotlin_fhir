@@ -1,5 +1,6 @@
-package com.juicelabs.fhir.model
+package com.juicelabs.fhir.model.datatypes
 
+import com.juicelabs.fhir.model.Base
 import java.io.Serializable
 import java.net.URI
 import java.sql.Timestamp

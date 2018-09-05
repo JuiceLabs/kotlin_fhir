@@ -5,6 +5,9 @@ import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
+import org.springframework.web.filter.ShallowEtagHeaderFilter
+import javax.servlet.Filter
+
 
 @SpringBootApplication
 class Application {
@@ -15,6 +18,11 @@ class Application {
             val server = Server.createTcpServer().start()
             println("Running on H2 port: " + server.port + " " + server.url)
         }
+    }
+
+    @Bean
+    fun filter(): Filter {
+        return ShallowEtagHeaderFilter()
     }
 }
 

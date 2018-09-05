@@ -1,8 +1,8 @@
-package com.juicelabs.fhir.model
+package com.juicelabs.fhir.model.datatypes
 
+import com.juicelabs.fhir.model.Base
 import java.net.URI
 import javax.persistence.*
-import javax.validation.constraints.Pattern
 
 /**
  * https://www.hl7.org/fhir/datatypes.html#Coding
@@ -16,3 +16,5 @@ data class Coding(
         val display: String? = null,
         val userSelected: Boolean?
 ) : Base()
+
+

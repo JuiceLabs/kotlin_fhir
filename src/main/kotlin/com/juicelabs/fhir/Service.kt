@@ -1,6 +1,6 @@
 package com.juicelabs.fhir
 
-import com.juicelabs.fhir.model.Patient
+import com.juicelabs.fhir.model.resource.Patient
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.util.concurrent.atomic.AtomicLong
@@ -27,16 +27,16 @@ class PatientController @Autowired constructor(val repository: PatientRepository
 
     @PostMapping
     @Transactional // not here?
-    fun addPatient(@RequestBody patient: Patient): String {
+    fun addPatient(@RequestBody patient: Patient): Patient {
         println(patient)
-        entityManager.persist(patient)
+        var savedPatient = entityManager.persist(patient)
         print("ID: " + patient.id)
-        return "foo"
+        return patient
     }
 
-    @GetMapping
-    fun getPatient(): Patient? {
-        return null
+    @GetMapping("/{id}")
+    fun getPatient( @PathVariable id : Long): Patient? {
+        return repository.findById(id).orElse(null)
     }
 
 }

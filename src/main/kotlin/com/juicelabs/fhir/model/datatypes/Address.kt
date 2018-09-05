@@ -1,5 +1,6 @@
-package com.juicelabs.fhir.model
+package com.juicelabs.fhir.model.datatypes
 
+import com.juicelabs.fhir.model.Base
 import org.hibernate.annotations.Cascade
 import javax.persistence.*
 

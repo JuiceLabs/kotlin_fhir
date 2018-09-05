@@ -1,9 +1,7 @@
-package com.juicelabs.fhir.model
+package com.juicelabs.fhir.model.datatypes
 
-import javax.persistence.Entity
-import javax.persistence.FetchType
-import javax.persistence.JoinColumn
-import javax.persistence.OneToOne
+import com.juicelabs.fhir.model.Base
+import javax.persistence.*
 
 /**
  * https://www.hl7.org/fhir/datatypes.html#ContactPoint
@@ -16,7 +14,7 @@ data class ContactPoint(
         val use: String?,
         val rank: Int?, // postive only
 
-        @OneToOne(fetch = FetchType.EAGER)
+        @OneToOne(cascade = arrayOf(CascadeType.ALL), fetch = FetchType.EAGER)
         @JoinColumn(name = "period_id")
         val period: Period?
 ) : Base()

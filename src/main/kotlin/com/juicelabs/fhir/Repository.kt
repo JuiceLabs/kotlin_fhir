@@ -1,7 +1,6 @@
 package com.juicelabs.fhir
 
-import com.juicelabs.fhir.model.Address
-import com.juicelabs.fhir.model.Patient
+import com.juicelabs.fhir.model.resource.Patient
 import org.springframework.data.repository.CrudRepository
 
 
