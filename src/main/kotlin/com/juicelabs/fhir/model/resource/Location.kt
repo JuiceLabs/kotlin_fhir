@@ -22,7 +22,7 @@ open class Location(
 
         val status: String?, // todo code
 
-        val opertaionalStatus: String?,
+        val opertaionalStatus: String?, // todo code?
 
         val name: String?,
 
